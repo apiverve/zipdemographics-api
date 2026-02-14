@@ -1,0 +1,110 @@
+openapi: 3.0.4
+info:
+  title: ZIP Demographics
+  description: >-
+    ZIP Demographics provides detailed demographic data for any US ZIP code
+    including population, income, education, housing, employment, and racial
+    composition from the US Census American Community Survey.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/zipdemographics:
+    get:
+      summary: Get ZIP Demographics
+      description: Get demographic data for a ZIP code
+      operationId: zipdemographics
+      parameters:
+        - name: zip
+          in: query
+          schema:
+            type: string
+          required: true
+          description: 5-digit US ZIP code
+          example: '90210'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  zip: '90210'
+                  name: ZCTA5 90210
+                  acsYear: 2022
+                  population:
+                    total: 21741
+                    male: 10234
+                    female: 11507
+                    medianAge: 45.3
+                  income:
+                    medianHousehold: 153891
+                    perCapita: 98234
+                  housing:
+                    medianHomeValue: 2875000
+                    medianRent: 3250
+                    totalUnits: 10234
+                    occupiedUnits: 8976
+                    vacantUnits: 1258
+                    ownerOccupied: 5678
+                    renterOccupied: 3298
+                    homeOwnershipRate: 63.2
+                  education:
+                    collegeEducatedPct: 72.4
+                    bachelors: 4523
+                    masters: 2341
+                    professional: 1234
+                    doctorate: 567
+                  employment:
+                    laborForce: 11234
+                    unemployed: 423
+                    unemploymentRate: 3.8
+                  race:
+                    white:
+                      count: 16892
+                      percent: 77.7
+                    black:
+                      count: 542
+                      percent: 2.5
+                    asian:
+                      count: 2345
+                      percent: 10.8
+                    hispanic:
+                      count: 1423
+                      percent: 6.5
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
