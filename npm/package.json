@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/zipdemographics",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "ZIP Demographics provides detailed demographic data for any US ZIP code including population, income, education, housing, employment, and racial composition from the US Census American Community Survey.",
   "main": "index.js",
   "types": "index.d.ts",
