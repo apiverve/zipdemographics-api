@@ -268,8 +268,9 @@ from apiverve_zipdemographics.apiClient import ZipdemographicsAPIClient
 
 api = ZipdemographicsAPIClient("[YOUR_API_KEY]")
 
+query = { "zip": "90210" }
+
 try:
-    query = { "zip": "90210" }
     result = api.execute(query)
     print(result)
 finally:
