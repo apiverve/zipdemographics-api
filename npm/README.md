@@ -139,22 +139,13 @@ async function makeRequest() {
       "medianHomeValue": 2875000,
       "medianRent": 3250,
       "totalUnits": 10234,
-      "occupiedUnits": 8976,
-      "vacantUnits": 1258,
-      "ownerOccupied": 5678,
-      "renterOccupied": 3298,
       "homeOwnershipRate": 63.2
     },
     "education": {
-      "collegeEducatedPct": 72.4,
-      "bachelors": 4523,
-      "masters": 2341,
-      "professional": 1234,
-      "doctorate": 567
+      "collegeEducatedPct": 72.4
     },
     "employment": {
       "laborForce": 11234,
-      "unemployed": 423,
       "unemploymentRate": 3.8
     },
     "race": {
@@ -162,18 +153,16 @@ async function makeRequest() {
         "count": 16892,
         "percent": 77.7
       },
-      "black": {
-        "count": 542,
-        "percent": 2.5
-      },
       "asian": {
         "count": 2345,
         "percent": 10.8
-      },
-      "hispanic": {
-        "count": 1423,
-        "percent": 6.5
       }
+    },
+    "formatted": {
+      "medianHouseholdIncome": "$153,891",
+      "perCapitaIncome": "$98,234",
+      "medianHomeValue": "$2,875,000",
+      "medianRent": "$3,250"
     }
   }
 }
