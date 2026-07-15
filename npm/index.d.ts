@@ -4,73 +4,82 @@ declare module '@apiverve/zipdemographics' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface zipdemographicsResponse {
     status: string;
     error: string | null;
     data: ZIPDemographicsData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface ZIPDemographicsData {
-      zip:        string;
-      name:       string;
-      acsYear:    number;
+      zip:        null | string;
+      name:       null | string;
+      acsYear:    number | null;
       population: Population;
       income:     Income;
       housing:    Housing;
       education:  Education;
       employment: Employment;
       race:       Race;
+      formatted:  Formatted;
   }
   
   interface Education {
-      collegeEducatedPct: number;
-      bachelors:          number;
-      masters:            number;
-      professional:       number;
-      doctorate:          number;
+      collegeEducatedPct: number | null;
   }
   
   interface Employment {
-      laborForce:       number;
-      unemployed:       number;
-      unemploymentRate: number;
+      laborForce:       number | null;
+      unemploymentRate: number | null;
+  }
+  
+  interface Formatted {
+      medianHouseholdIncome: null | string;
+      perCapitaIncome:       null | string;
+      medianHomeValue:       null | string;
+      medianRent:            null | string;
   }
   
   interface Housing {
-      medianHomeValue:   number;
-      medianRent:        number;
-      totalUnits:        number;
-      occupiedUnits:     number;
-      vacantUnits:       number;
-      ownerOccupied:     number;
-      renterOccupied:    number;
-      homeOwnershipRate: number;
+      medianHomeValue:   number | null;
+      medianRent:        number | null;
+      totalUnits:        number | null;
+      homeOwnershipRate: number | null;
   }
   
   interface Income {
-      medianHousehold: number;
-      perCapita:       number;
+      medianHousehold: number | null;
+      perCapita:       number | null;
   }
   
   interface Population {
-      total:     number;
-      male:      number;
-      female:    number;
-      medianAge: number;
+      total:     number | null;
+      male:      number | null;
+      female:    number | null;
+      medianAge: number | null;
   }
   
   interface Race {
-      white:    Asian;
-      black:    Asian;
-      asian:    Asian;
-      hispanic: Asian;
+      white: Asian;
+      asian: Asian;
   }
   
   interface Asian {
-      count:   number;
-      percent: number;
+      count:   number | null;
+      percent: number | null;
   }
 
   export default class zipdemographicsWrapper {
