@@ -25,18 +25,21 @@ namespace APIVerve.API.ZIPDemographics
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("zip")]
-        public long Zip { get; set; }
+        public long? Zip { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
 
         [JsonProperty("acsYear")]
-        public long AcsYear { get; set; }
+        public long? AcsYear { get; set; }
 
         [JsonProperty("population")]
         public Population Population { get; set; }
@@ -55,87 +58,78 @@ namespace APIVerve.API.ZIPDemographics
 
         [JsonProperty("race")]
         public Race Race { get; set; }
+
+        [JsonProperty("formatted")]
+        public Formatted Formatted { get; set; }
     }
 
     public partial class Education
     {
         [JsonProperty("collegeEducatedPct")]
-        public double CollegeEducatedPct { get; set; }
-
-        [JsonProperty("bachelors")]
-        public long Bachelors { get; set; }
-
-        [JsonProperty("masters")]
-        public long Masters { get; set; }
-
-        [JsonProperty("professional")]
-        public long Professional { get; set; }
-
-        [JsonProperty("doctorate")]
-        public long Doctorate { get; set; }
+        public double? CollegeEducatedPct { get; set; }
     }
 
     public partial class Employment
     {
         [JsonProperty("laborForce")]
-        public long LaborForce { get; set; }
-
-        [JsonProperty("unemployed")]
-        public long Unemployed { get; set; }
+        public long? LaborForce { get; set; }
 
         [JsonProperty("unemploymentRate")]
-        public double UnemploymentRate { get; set; }
+        public double? UnemploymentRate { get; set; }
+    }
+
+    public partial class Formatted
+    {
+        [JsonProperty("medianHouseholdIncome")]
+        public string MedianHouseholdIncome { get; set; }
+
+        [JsonProperty("perCapitaIncome")]
+        public string PerCapitaIncome { get; set; }
+
+        [JsonProperty("medianHomeValue")]
+        public string MedianHomeValue { get; set; }
+
+        [JsonProperty("medianRent")]
+        public string MedianRent { get; set; }
     }
 
     public partial class Housing
     {
         [JsonProperty("medianHomeValue")]
-        public long MedianHomeValue { get; set; }
+        public long? MedianHomeValue { get; set; }
 
         [JsonProperty("medianRent")]
-        public long MedianRent { get; set; }
+        public long? MedianRent { get; set; }
 
         [JsonProperty("totalUnits")]
-        public long TotalUnits { get; set; }
-
-        [JsonProperty("occupiedUnits")]
-        public long OccupiedUnits { get; set; }
-
-        [JsonProperty("vacantUnits")]
-        public long VacantUnits { get; set; }
-
-        [JsonProperty("ownerOccupied")]
-        public long OwnerOccupied { get; set; }
-
-        [JsonProperty("renterOccupied")]
-        public long RenterOccupied { get; set; }
+        public long? TotalUnits { get; set; }
 
         [JsonProperty("homeOwnershipRate")]
-        public double HomeOwnershipRate { get; set; }
+        public double? HomeOwnershipRate { get; set; }
     }
 
     public partial class Income
     {
         [JsonProperty("medianHousehold")]
-        public long MedianHousehold { get; set; }
+        public long? MedianHousehold { get; set; }
 
         [JsonProperty("perCapita")]
-        public long PerCapita { get; set; }
+        public long? PerCapita { get; set; }
     }
 
     public partial class Population
     {
         [JsonProperty("total")]
-        public long Total { get; set; }
+        public long? Total { get; set; }
 
         [JsonProperty("male")]
-        public long Male { get; set; }
+        public long? Male { get; set; }
 
         [JsonProperty("female")]
-        public long Female { get; set; }
+        public long? Female { get; set; }
 
         [JsonProperty("medianAge")]
-        public double MedianAge { get; set; }
+        public double? MedianAge { get; set; }
     }
 
     public partial class Race
@@ -143,22 +137,28 @@ namespace APIVerve.API.ZIPDemographics
         [JsonProperty("white")]
         public Asian White { get; set; }
 
-        [JsonProperty("black")]
-        public Asian Black { get; set; }
-
         [JsonProperty("asian")]
         public Asian Asian { get; set; }
-
-        [JsonProperty("hispanic")]
-        public Asian Hispanic { get; set; }
     }
 
     public partial class Asian
     {
         [JsonProperty("count")]
-        public long Count { get; set; }
+        public long? Count { get; set; }
 
         [JsonProperty("percent")]
-        public double Percent { get; set; }
+        public double? Percent { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
