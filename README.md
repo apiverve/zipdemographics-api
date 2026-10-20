@@ -1,13 +1,13 @@
-# [ZIP Demographics API](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [ZIP Demographics API](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-ZIP Demographics provides detailed demographic data for any US ZIP code including population, income, education, housing, employment, and racial composition from the US Census American Community Survey.
+ZIP Demographics is a demographic data API for any US ZIP code, built on the US Census American Community Survey. Every plan gets total population and median household income, while paid plans add age, per-capita income, education, housing, employment, and racial composition.
 
 The ZIP Demographics API provides a simple, reliable way to integrate zip demographics functionality into your applications. Built for developers who need production-ready zip demographics capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/zipdemographics-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [ZIP Demographics API](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [ZIP Demographics API](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/zipdemographics](https://docs.apiverve.com/ref/zipdemographics)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -191,11 +191,86 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the ZIP Demographics API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "zip": "90210",
+    "name": "ZCTA5 90210",
+    "acsYear": 2024,
+    "population": {
+      "total": 19004,
+      "male": 9417,
+      "female": 9587,
+      "medianAge": 51
+    },
+    "income": {
+      "medianHousehold": 187801,
+      "perCapita": 147098
+    },
+    "housing": {
+      "medianHomeValue": 2000001,
+      "medianRent": 3251,
+      "totalUnits": 9531,
+      "occupiedUnits": 8029,
+      "vacantUnits": 1502,
+      "ownerOccupied": 5679,
+      "renterOccupied": 2350,
+      "homeOwnershipRate": 70.7
+    },
+    "education": {
+      "collegeEducatedPct": 68.1,
+      "bachelors": 4837,
+      "masters": 2389,
+      "professional": 1962,
+      "doctorate": 929
+    },
+    "employment": {
+      "laborForce": 9017,
+      "unemployed": 468,
+      "unemploymentRate": 5.2
+    },
+    "race": {
+      "white": {
+        "count": 15147,
+        "percent": 79.7
+      },
+      "black": {
+        "count": 403,
+        "percent": 2.1
+      },
+      "asian": {
+        "count": 1628,
+        "percent": 8.6
+      },
+      "hispanic": {
+        "count": 1138,
+        "percent": 6
+      }
+    },
+    "formatted": {
+      "medianHouseholdIncome": "$187,801",
+      "perCapitaIncome": "$147,098",
+      "medianHomeValue": "$2,000,001",
+      "medianRent": "$3,251"
+    }
+  }
 }
 ```
 
@@ -203,7 +278,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [ZIP Demographics API](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [ZIP Demographics API](https://apiverve.com/marketplace/zipdemographics?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

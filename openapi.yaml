@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: ZIP Demographics
   description: >-
-    ZIP Demographics provides detailed demographic data for any US ZIP code
-    including population, income, education, housing, employment, and racial
-    composition from the US Census American Community Survey.
+    ZIP Demographics is a demographic data API for any US ZIP code, built on the
+    US Census American Community Survey. Every plan gets total population and
+    median household income, while paid plans add age, per-capita income,
+    education, housing, employment, and racial composition.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/zipdemographics:
     get:
-      summary: Get ZIP Demographics
+      summary: ZIP Demographics
       description: Get demographic data for a ZIP code
       operationId: zipdemographics
       parameters:
@@ -53,37 +54,52 @@ paths:
                 data:
                   zip: '90210'
                   name: ZCTA5 90210
-                  acsYear: 2022
+                  acsYear: 2024
                   population:
-                    total: 21741
-                    male: 10234
-                    female: 11507
-                    medianAge: 45.3
+                    total: 19004
+                    male: 9417
+                    female: 9587
+                    medianAge: 51
                   income:
-                    medianHousehold: 153891
-                    perCapita: 98234
+                    medianHousehold: 187801
+                    perCapita: 147098
                   housing:
-                    medianHomeValue: 2875000
-                    medianRent: 3250
-                    totalUnits: 10234
-                    homeOwnershipRate: 63.2
+                    medianHomeValue: 2000001
+                    medianRent: 3251
+                    totalUnits: 9531
+                    occupiedUnits: 8029
+                    vacantUnits: 1502
+                    ownerOccupied: 5679
+                    renterOccupied: 2350
+                    homeOwnershipRate: 70.7
                   education:
-                    collegeEducatedPct: 72.4
+                    collegeEducatedPct: 68.1
+                    bachelors: 4837
+                    masters: 2389
+                    professional: 1962
+                    doctorate: 929
                   employment:
-                    laborForce: 11234
-                    unemploymentRate: 3.8
+                    laborForce: 9017
+                    unemployed: 468
+                    unemploymentRate: 5.2
                   race:
                     white:
-                      count: 16892
-                      percent: 77.7
+                      count: 15147
+                      percent: 79.7
+                    black:
+                      count: 403
+                      percent: 2.1
                     asian:
-                      count: 2345
-                      percent: 10.8
+                      count: 1628
+                      percent: 8.6
+                    hispanic:
+                      count: 1138
+                      percent: 6
                   formatted:
-                    medianHouseholdIncome: $153,891
-                    perCapitaIncome: $98,234
-                    medianHomeValue: $2,875,000
-                    medianRent: $3,250
+                    medianHouseholdIncome: $187,801
+                    perCapitaIncome: $147,098
+                    medianHomeValue: $2,000,001
+                    medianRent: $3,251
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
