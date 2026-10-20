@@ -1,13 +1,12 @@
 ZIP Demographics API
 ============
 
-ZIP Demographics provides detailed demographic data for any US ZIP code including population, income, education, housing, employment, and racial composition from the US Census American Community Survey.
+ZIP Demographics is a demographic data API for any US ZIP code, built on the US Census American Community Survey. Every plan gets total population and median household income, while paid plans add age, per-capita income, education, housing, employment, and racial composition.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [ZIP Demographics API](https://apiverve.com/marketplace/zipdemographics?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-zipdemographics.svg)](https://pypi.org/project/apiverve-zipdemographics/)
+
+This is a Python wrapper for the [ZIP Demographics API](https://apiverve.com/marketplace/zipdemographics?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-zipdemographics
 
 ## Configuration
 
-Before using the zipdemographics API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the ZIP Demographics API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The ZIP Demographics API documentation is found here: [https://docs.apiverve.com/ref/zipdemographics](https://docs.apiverve.com/ref/zipdemographics?utm_source=pypi&utm_medium=readme).
+The ZIP Demographics API documentation is found here: [https://docs.apiverve.com/ref/zipdemographics](https://docs.apiverve.com/ref/zipdemographics?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -104,56 +103,62 @@ print(result)
   "data": {
     "zip": "90210",
     "name": "ZCTA5 90210",
-    "acsYear": 2022,
+    "acsYear": 2024,
     "population": {
-      "total": 21741,
-      "male": 10234,
-      "female": 11507,
-      "medianAge": 45.3
+      "total": 19004,
+      "male": 9417,
+      "female": 9587,
+      "medianAge": 51
     },
     "income": {
-      "medianHousehold": 153891,
-      "perCapita": 98234
+      "medianHousehold": 187801,
+      "perCapita": 147098
     },
     "housing": {
-      "medianHomeValue": 2875000,
-      "medianRent": 3250,
-      "totalUnits": 10234,
-      "occupiedUnits": 8976,
-      "vacantUnits": 1258,
-      "ownerOccupied": 5678,
-      "renterOccupied": 3298,
-      "homeOwnershipRate": 63.2
+      "medianHomeValue": 2000001,
+      "medianRent": 3251,
+      "totalUnits": 9531,
+      "occupiedUnits": 8029,
+      "vacantUnits": 1502,
+      "ownerOccupied": 5679,
+      "renterOccupied": 2350,
+      "homeOwnershipRate": 70.7
     },
     "education": {
-      "collegeEducatedPct": 72.4,
-      "bachelors": 4523,
-      "masters": 2341,
-      "professional": 1234,
-      "doctorate": 567
+      "collegeEducatedPct": 68.1,
+      "bachelors": 4837,
+      "masters": 2389,
+      "professional": 1962,
+      "doctorate": 929
     },
     "employment": {
-      "laborForce": 11234,
-      "unemployed": 423,
-      "unemploymentRate": 3.8
+      "laborForce": 9017,
+      "unemployed": 468,
+      "unemploymentRate": 5.2
     },
     "race": {
       "white": {
-        "count": 16892,
-        "percent": 77.7
+        "count": 15147,
+        "percent": 79.7
       },
       "black": {
-        "count": 542,
-        "percent": 2.5
+        "count": 403,
+        "percent": 2.1
       },
       "asian": {
-        "count": 2345,
-        "percent": 10.8
+        "count": 1628,
+        "percent": 8.6
       },
       "hispanic": {
-        "count": 1423,
-        "percent": 6.5
+        "count": 1138,
+        "percent": 6
       }
+    },
+    "formatted": {
+      "medianHouseholdIncome": "$187,801",
+      "perCapitaIncome": "$147,098",
+      "medianHomeValue": "$2,000,001",
+      "medianRent": "$3,251"
     }
   }
 }
@@ -282,7 +287,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -293,12 +298,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
