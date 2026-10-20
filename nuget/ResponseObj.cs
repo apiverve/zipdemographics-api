@@ -67,12 +67,27 @@ namespace APIVerve.API.ZIPDemographics
     {
         [JsonProperty("collegeEducatedPct")]
         public double? CollegeEducatedPct { get; set; }
+
+        [JsonProperty("bachelors")]
+        public long? Bachelors { get; set; }
+
+        [JsonProperty("masters")]
+        public long? Masters { get; set; }
+
+        [JsonProperty("professional")]
+        public long? Professional { get; set; }
+
+        [JsonProperty("doctorate")]
+        public long? Doctorate { get; set; }
     }
 
     public partial class Employment
     {
         [JsonProperty("laborForce")]
         public long? LaborForce { get; set; }
+
+        [JsonProperty("unemployed")]
+        public long? Unemployed { get; set; }
 
         [JsonProperty("unemploymentRate")]
         public double? UnemploymentRate { get; set; }
@@ -104,6 +119,18 @@ namespace APIVerve.API.ZIPDemographics
         [JsonProperty("totalUnits")]
         public long? TotalUnits { get; set; }
 
+        [JsonProperty("occupiedUnits")]
+        public long? OccupiedUnits { get; set; }
+
+        [JsonProperty("vacantUnits")]
+        public long? VacantUnits { get; set; }
+
+        [JsonProperty("ownerOccupied")]
+        public long? OwnerOccupied { get; set; }
+
+        [JsonProperty("renterOccupied")]
+        public long? RenterOccupied { get; set; }
+
         [JsonProperty("homeOwnershipRate")]
         public double? HomeOwnershipRate { get; set; }
     }
@@ -129,7 +156,7 @@ namespace APIVerve.API.ZIPDemographics
         public long? Female { get; set; }
 
         [JsonProperty("medianAge")]
-        public double? MedianAge { get; set; }
+        public long? MedianAge { get; set; }
     }
 
     public partial class Race
@@ -137,8 +164,14 @@ namespace APIVerve.API.ZIPDemographics
         [JsonProperty("white")]
         public Asian White { get; set; }
 
+        [JsonProperty("black")]
+        public Asian Black { get; set; }
+
         [JsonProperty("asian")]
         public Asian Asian { get; set; }
+
+        [JsonProperty("hispanic")]
+        public Asian Hispanic { get; set; }
     }
 
     public partial class Asian
