@@ -39,10 +39,15 @@ declare module '@apiverve/zipdemographics' {
   
   interface Education {
       collegeEducatedPct: number | null;
+      bachelors:          number | null;
+      masters:            number | null;
+      professional:       number | null;
+      doctorate:          number | null;
   }
   
   interface Employment {
       laborForce:       number | null;
+      unemployed:       number | null;
       unemploymentRate: number | null;
   }
   
@@ -57,6 +62,10 @@ declare module '@apiverve/zipdemographics' {
       medianHomeValue:   number | null;
       medianRent:        number | null;
       totalUnits:        number | null;
+      occupiedUnits:     number | null;
+      vacantUnits:       number | null;
+      ownerOccupied:     number | null;
+      renterOccupied:    number | null;
       homeOwnershipRate: number | null;
   }
   
@@ -73,8 +82,10 @@ declare module '@apiverve/zipdemographics' {
   }
   
   interface Race {
-      white: Asian;
-      asian: Asian;
+      white:    Asian;
+      black:    Asian;
+      asian:    Asian;
+      hispanic: Asian;
   }
   
   interface Asian {
