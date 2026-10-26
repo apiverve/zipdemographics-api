@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/zipdemographics",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "ZIP Demographics is a demographic data API for any US ZIP code, built on the US Census American Community Survey. Every plan gets total population and median household income, while paid plans add age, per-capita income, education, housing, employment, and racial composition.",
   "main": "index.js",
   "types": "index.d.ts",
